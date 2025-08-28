@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://sagarhudge.github.io/redux-thunk-toolkit-html5-ts/",
+  "homepage": "https://sagarhudge.github.io/redux-thunk-toolkit-html5-ts",
 
   "scripts": {
     "dev": "vite",
