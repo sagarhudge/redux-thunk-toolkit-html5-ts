@@ -47,17 +47,47 @@ Example:
 
 ---
 
-## Project Setup
+## Homepage & Deployment Reference
 
-We’ll create a React app with TypeScript, Redux Toolkit, and Redux Thunk.
+- **Homepage field in `package.json`:**  
+  `"homepage": "https://sagarhudge.github.io/redux-thunk-toolkit-html5-ts"`  
+  This is used for GitHub Pages deployment.
+
+- **Vite base config in `vite.config.ts`:**  
+  `base: '/redux-thunk-toolkit-html5-ts/'`  
+  Ensures correct asset paths for GitHub Pages.
+
+---
+
+## Usage
+
+- Posts are fetched from [JSONPlaceholder](https://jsonplaceholder.typicode.com/posts).
+- You can add new posts using the form.
+- State management is handled via Redux Toolkit and Redux Thunk.
+
+---
+
+## Quick Start
 
 ```bash
-# Create a Vite + React + TypeScript project
-npm create vite@latest my-redux-app -- --template react-ts
-cd my-redux-app
+npm install
+npm run dev
+```
 
-# Install Redux Toolkit and React Redux
-npm install @reduxjs/toolkit react-redux
+Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-# Install TypeScript types (if missing)
-npm install -D @types/react-redux
+---
+
+## How It Works
+
+- **Redux Store**: Configured in `src/features/posts/store.ts`.
+- **Posts Slice**: Async thunks for fetching and adding posts in `src/features/posts/postsSlice.ts`.
+- **Types**: Defined in `src/features/posts/types.ts`.
+- **UI**: Main UI in `src/Posts.tsx`, styled with `src/Posts.css`.
+
+---
+
+## Deployment
+
+GitHub Actions workflow (`.github/workflows/deploy.yml`) builds and deploys the app to GitHub Pages.
+
