@@ -6,7 +6,7 @@ on:
       - master
 
 permissions:
-  contents: write  
+  contents: write
 
 jobs:
   deploy:
@@ -29,9 +29,13 @@ jobs:
       - name: Build project
         run: npm run build
 
+      # Debug: Check output folder exists
+      - name: List build output
+        run: ls -la build || ls -la dist
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: ./build # or ./dist depending on your project
           publish_branch: gh-pages
